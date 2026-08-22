@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="about-with-banner">
+  <div class="about-content">
+    {{ page.content }}
+  </div>
+  <div class="about-banner">
+    <img src="{{ base_url }}/assets/raion.png" alt="ライオン" />
+  </div>
+</div>
+{% endblock %}

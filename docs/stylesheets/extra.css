@@ -1,0 +1,33 @@
+/* Only affects the page that uses the about.html template */
+.about-with-banner {
+  display: grid;
+  grid-template-columns: 1fr 340px;   /* text | banner */
+  gap: 2.5rem;
+  align-items: start;
+}
+
+
+.about-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  position: sticky;
+  top: 5.5rem;          /* stays visible while scrolling */
+}
+
+.md-header__button.md-logo {
+  display: none !important;
+}
+
+/* Mobile: stack them */
+@media (max-width: 960px) {
+  .about-with-banner {
+    grid-template-columns: 1fr;
+  }
+  .about-banner {
+    order: -1;           /* banner on top on mobile */
+    max-width: 320px;
+    margin: 0 auto 2rem;
+  }
+}
