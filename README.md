@@ -1,1 +1,4 @@
-# Enumeration is the key..
+#### Certifications
+```
+CRTA Certified Red Team Analyst
+```
