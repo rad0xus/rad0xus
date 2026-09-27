@@ -12,6 +12,7 @@ site_name = "parad0x"
 
 nav = [
   { "About" = "index.md" },
+  { "Silentium machine Writeup" = "silentium.md" },
 ]
 
 extra_css = ["stylesheets/extra.css"]
