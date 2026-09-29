@@ -122,7 +122,7 @@ Response:
 
 ### Password Reset Flaw (CVE-2025-58434)
 
-Analyzing the application against known vulnerabilities for this version reveals [CVE-2025-58434](https://github.com/advisories/GHSA-wgpv-6j63-x5ph?utm_source=gemini). Initiate a password reset request targeting user `ben@silentium.htb`:
+Analyzing the application against known vulnerabilities for this version reveals [CVE-2025-58434](https://github.com/advisories/GHSA-wgpv-6j63-x5ph). Initiate a password reset request targeting user `ben@silentium.htb`:
 
 ```bash
 curl -s -X POST http://staging.silentium.htb/api/v1/account/forgot-password \
@@ -177,7 +177,7 @@ curl -i -X POST http://staging.silentium.htb/api/v1/account/reset-password \
 
 ### Remote Code Execution in Flowise (CVE-2025-59528)
 
-With authenticated access, target [CVE-2025-59528](https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-3gcm-f6qx-ff7p?utm_source=gemini) in Flowise to obtain remote code execution via `customMCP`:
+With authenticated access, target [CVE-2025-59528](https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-3gcm-f6qx-ff7p) in Flowise to obtain remote code execution via `customMCP`:
 
 ```bash
 curl -X POST http://staging.silentium.htb/api/v1/node-load-method/customMCP \
@@ -286,8 +286,8 @@ ii  packagekit        1.2.8-2ubuntu1.4        amd64        Provides a package ma
 
 The installed version `PackageKit 1.2.8-2ubuntu1.4` is vulnerable to a TOCTOU race condition allowing local privilege escalation to root:
 
-* Reference: [GHSA-f55j-vvr9-69xv](https://github.com/PackageKit/PackageKit/security/advisories/GHSA-f55j-vvr9-69xv?utm_source=gemini)
-* Advisory: [Pack2TheRoot LPE Analysis](https://github.security.telekom.com/2026/04/pack2theroot-linux-local-privilege-escalation.html?utm_source=gemini)
+* Advisory: [GHSA-f55j-vvr9-69xv](https://github.com/PackageKit/PackageKit/security/advisories/GHSA-f55j-vvr9-69xv)
+* Reference: [Pack2TheRoot LPE Analysis](https://github.security.telekom.com/2026/04/pack2theroot-linux-local-privilege-escalation.html)
 
 Execute the Pack2TheRoot exploit vector against PackageKit to achieve full `root` privilege escalation on `silentium.htb`.
 
