@@ -2,11 +2,6 @@
 site_url = "https://www.example.com/"
 site_name = "parad0x"
 
-[project.plugins.redirects]
-
-[project.plugins.redirects.redirect_maps]
-"silentium.md" = "writeups/silentium.md"
-
 # site_description = "Your project description"
 # site_author = "Your name"
 
@@ -28,6 +23,11 @@ nav = [
 
 extra_css = ["stylesheets/extra.css"]
 # extra_javascript = ["javascripts/extra.js"]
+
+[project.plugins.redirects]
+
+[project.plugins.redirects.redirect_maps]
+"silentium.md" = "writeups/silentium.md"
 
 [project.theme]
 # variant = "classic"
