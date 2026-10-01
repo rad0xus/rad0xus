@@ -1,5 +1,5 @@
 <div class="machine-header" markdown>
-<img src="images/silentium/machine-icon.png" alt="machine-icon" class="machine-icon" />
+<img src="../images/silentium/machine-icon.png" alt="machine-icon" class="machine-icon" />
 <div class="machine-title" markdown>
 <h1>Silentium</h1>
 <p class="machine-tags" markdown>:lucide-bird: Linux &nbsp;&nbsp; :lucide-bar-chart-3: Easy</p>
@@ -33,7 +33,7 @@ With port 80 open, add the hostname mapping to `/etc/hosts`:
 echo "10.129.245.103 silentium.htb" | sudo tee -a /etc/hosts
 ```
 
-![1](images/silentium/1.png)
+![1](../images/silentium/1.png)
 
 !!! info "Target User Enumeration"
 
@@ -69,7 +69,7 @@ Output:
 staging                 [Status: 200, Size: 3142, Words: 789, Lines: 70, Duration: 609ms]
 ```
 
-![2](images/silentium/2.png)
+![2](../images/silentium/2.png)
 
 ### API Endpoint Discovery
 
@@ -112,13 +112,13 @@ Response:
 {"version":"3.0.5"}
 ```
 
-![3](images/silentium/3.png)
+![3](../images/silentium/3.png)
 
 ---
 
 ## Exploitation & Initial Access
 
-![4](images/silentium/4.png)
+![4](../images/silentium/4.png)
 
 ### Password Reset Flaw (CVE-2025-58434)
 
@@ -169,9 +169,9 @@ curl -i -X POST http://staging.silentium.htb/api/v1/account/reset-password \
   }'
 ```
 
-![5](images/silentium/5.png)
+![5](../images/silentium/5.png)
 
-![6](images/silentium/6.png)
+![6](../images/silentium/6.png)
 
 ---
 
@@ -257,7 +257,7 @@ ssh ben@silentium.htb
 
 Linux enumeration with [linPEAS](https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS)
 
-![7](images/silentium/7.png)
+![7](../images/silentium/7.png)
 
 ??? info "Understanding enumeration results"
 
@@ -291,8 +291,8 @@ The installed version `PackageKit 1.2.8-2ubuntu1.4` is vulnerable to a TOCTOU ra
 
 Execute the Pack2TheRoot exploit vector against PackageKit to achieve full `root` privilege escalation on `silentium.htb`.
 
-![8](images/silentium/8.png)
+![8](../images/silentium/8.png)
 
 [Silentium Solve](https://labs.hackthebox.com/achievement/machine/2411080/867)
 
-![[solve](https://labs.hackthebox.com/achievement/machine/2411080/867)](images/silentium/solve.png)
+![[solve](https://labs.hackthebox.com/achievement/machine/2411080/867)](../images/silentium/solve.png)

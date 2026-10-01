@@ -4,6 +4,9 @@
         <loc>https://www.example.com/</loc>
       </url>
       <url>
-        <loc>https://www.example.com/silentium/</loc>
+        <loc>https://www.example.com/blogs/HiQPdf%20SSRF/</loc>
+      </url>
+      <url>
+        <loc>https://www.example.com/writeups/silentium/</loc>
       </url>
 </urlset>

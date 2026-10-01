@@ -12,7 +12,12 @@ site_name = "parad0x"
 
 nav = [
   { "About" = "index.md" },
-  { "Silentium machine Writeup" = "silentium.md" },
+  { "Blogs" = [
+      { "SSRF in HTML-to-PDF" = "blogs/HiQPdf SSRF.md" },
+  ]},
+  { "HTB" = [
+      { "Silentium machine" = "writeups/silentium.md" },
+  ]},
 ]
 
 extra_css = ["stylesheets/extra.css"]
