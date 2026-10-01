@@ -124,3 +124,4 @@ pymdownx.tilde = {}
 
 [project.extra]
 generator = false
+
